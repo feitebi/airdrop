@@ -6,7 +6,7 @@ import './ERC20Basic.sol';
 
 ////////
 
-contract AirdropCentral {
+contract AirdropToken {
     using SafeMath for uint256;
 
     // The owner / admin of the Airdrop Central
@@ -86,7 +86,7 @@ contract AirdropCentral {
     event E_Signup(address _userAddress,uint _signupDate);
     event E_TokensWithdrawn(address _tokenAddress,address _userAddress, uint _tokensWithdrawn, uint _withdrawalDate);
 
-    function AirdropCentral() public {
+    function AirdropToken() public {
         owner = msg.sender;
     }
 
