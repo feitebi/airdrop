@@ -4,8 +4,6 @@ import './ERC20Basic.sol';
 
 //////////////////
 
-////////
-
 contract AirdropToken {
     using SafeMath for uint256;
 
@@ -90,10 +88,6 @@ contract AirdropToken {
         owner = msg.sender;
     }
 
-    /////////////////////
-    // Owner / Admin functions
-    /////////////////////
-
     /**
      * @dev pause or unpause the contract in case a problem is detected
      */
@@ -169,11 +163,6 @@ contract AirdropToken {
         E_Signup(msg.sender,now);
     }
 
-
-    /////////////////////
-    // Airdropper functions
-    /////////////////////
-
     /**
      * @dev Transfers tokens to contract and sets the Token Airdrop
      * @notice Before calling this function, you must have given the Airdrop Central
@@ -238,10 +227,6 @@ contract AirdropToken {
         E_TokensWithdrawn(_tokenAddress,msg.sender,tokensToReturn,now);
 
     }
-
-    /////////////////////
-    // User functions
-    /////////////////////
 
     /**
      * @dev user can signup to the Airdrop Central to receive token airdrops
@@ -347,8 +332,10 @@ contract AirdropToken {
                 }
             }
         }
+        
         // Get the token
         ERC20Basic token = ERC20Basic(_tokenAddress);
+        
         // Transfer tokens from all airdrops that correspond to this user
         require(token.transfer(msg.sender,totalTokensToTransfer));
 
